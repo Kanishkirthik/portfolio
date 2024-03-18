@@ -1,13 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import 'bootstrap-icons/font/bootstrap-icons.min.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Route,Routes,BrowserRouter} from 'react-router-dom'
+import Home from './Home';
+import Skillsets from './skillsets';
+import Achivements from './Achivements';
+import Projects from './Projects';
+import Educations from './Educations';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+<Routes>
+<Route path='/' element={<App/>}></Route>
+<Route path='/' element={<Home/>}></Route>
+<Route path='/skillsets' element={<Skillsets/>}></Route>
+<Route path='/Achivements' element={<Achivements/>}></Route>
+<Route path='/Projects' element={<Projects/>}></Route>
+<Route path='/Education' element={<Educations/>}></Route>
+</Routes>
+</BrowserRouter>
   </React.StrictMode>
 );
 
